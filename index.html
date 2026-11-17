@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DESI TOUCH | A Cinematic Food Experience</title>
+
+  <meta name="description" content="DESI TOUCH - Experience the art, culture and magic of food.">
+  <meta name="theme-color" content="#080604">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- CINEMATIC INTRO -->
+  <main id="cinematic-intro">
+
+    <canvas id="cinematic-canvas"></canvas>
+
+    <div class="intro-background"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-grain"></div>
+
+    <!-- Ambient Lights -->
+    <div class="ambient-light light-one"></div>
+    <div class="ambient-light light-two"></div>
+
+    <!-- Scene 1 -->
+    <section class="story-scene" id="scene-awakening">
+      <div class="scene-content">
+        <span class="scene-number">01 — THE BEGINNING</span>
+        <h2 class="scene-heading">
+          Every Legend<br>Has A Beginning.
+        </h2>
+        <div class="scene-line"></div>
+      </div>
+    </section>
+
+    <!-- Scene 2 -->
+    <section class="story-scene" id="scene-ingredients">
+      <div class="scene-content">
+        <span class="scene-number">02 — THE INGREDIENTS</span>
+        <h2 class="scene-heading">
+          Born From<br>Pure Tradition.
+        </h2>
+        <p class="scene-description">
+          A thousand flavours. One beautiful story.
+        </p>
+      </div>
+    </section>
+
+    <!-- Scene 3 -->
+    <section class="story-scene" id="scene-creation">
+      <div class="scene-content">
+        <span class="scene-number">03 — THE CREATION</span>
+        <h2 class="scene-heading">
+          Crafted With<br>Passion.
+        </h2>
+        <p class="scene-description">
+          Where fire meets imagination.
+        </p>
+      </div>
+    </section>
+
+    <!-- Scene 4 -->
+    <section class="story-scene" id="scene-magic">
+      <div class="scene-content">
+        <span class="scene-number">04 — THE EXPERIENCE</span>
+        <h2 class="scene-heading">
+          More Than Food.<br>An Emotion.
+        </h2>
+      </div>
+    </section>
+
+    <!-- FINAL 7 SECOND BRAND REVEAL -->
+    <section id="brand-reveal">
+
+      <div class="reveal-sky"></div>
+      <div class="reveal-light"></div>
+
+      <!-- Cinematic Rings -->
+      <div class="reveal-ring ring-one"></div>
+      <div class="reveal-ring ring-two"></div>
+      <div class="reveal-ring ring-three"></div>
+
+      <!-- Brand -->
+      <div class="brand-content">
+
+        <span class="brand-pretitle">
+          THE ART OF FLAVOUR
+        </span>
+
+        <div class="brand-title-wrap">
+          <h1 id="brand-title">
+            DESI
+            <span>TOUCH</span>
+          </h1>
+        </div>
+
+        <div class="brand-divider"></div>
+
+        <p class="brand-tagline">
+          A TASTE OF TRADITION. A TOUCH OF MAGIC.
+        </p>
+
+      </div>
+
+      <div class="reveal-flash"></div>
+
+    </section>
+
+    <!-- Skip Intro -->
+    <button id="skip-intro" type="button">
+      SKIP INTRO <span>→</span>
+    </button>
+
+    <!-- Progress -->
+    <div class="intro-progress">
+      <div class="progress-track">
+        <div id="progress-bar"></div>
+      </div>
+      <span id="progress-time">00:00</span>
+    </div>
+
+  </main>
+
+
+  <!-- MAIN WEBSITE -->
+  <div id="main-website">
+
+    <!-- Header -->
+    <header class="main-header">
+
+      <a href="#" class="main-logo">
+        DESI TOUCH<span>.</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-button" type="button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+
+    </header>
+
+
+    <!-- Hero -->
+    <section class="main-hero" id="home">
+
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+
+        <span class="hero-eyebrow">
+          WELCOME TO DESI TOUCH
+        </span>
+
+        <h2>
+          THE SOUL OF<br>
+          <span>INDIAN FLAVOUR.</span>
+        </h2>
+
+        <p>
+          Discover a world where tradition,
+          creativity and unforgettable flavours meet.
+        </p>
+
+        <a href="#story" class="hero-button">
+          EXPLORE OUR WORLD <span>↗</span>
+        </a>
+
+      </div>
+
+      <div class="hero-side-text">
+        FLAVOUR · CULTURE · EXPERIENCE
+      </div>
+
+      <div class="hero-scroll">
+        SCROLL TO DISCOVER
+        <span></span>
+      </div>
+
+    </section>
+
+
+    <!-- Story -->
+    <section class="story-section" id="story">
+
+      <span class="section-label">OUR STORY</span>
+
+      <h2>
+        Every Flavour<br>
+        Has A Story.
+      </h2>
+
+      <p>
+        A journey inspired by tradition and
+        created to celebrate the magic of food.
+      </p>
+
+    </section>
+
+
+    <!-- Experience -->
+    <section class="experience-section" id="experience">
+
+      <span class="section-label">THE EXPERIENCE</span>
+
+      <h2>Something Extraordinary.</h2>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+
+      <h2>DESI TOUCH.</h2>
+
+      <p>
+        A TASTE OF TRADITION. A TOUCH OF MAGIC.
+      </p>
+
+      <span>
+        © 2026 DESI TOUCH. ALL RIGHTS RESERVED.
+      </span>
+
+    </footer>
+
+  </div>
+
+
+  <!-- JavaScript -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
